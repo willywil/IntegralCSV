@@ -1,21 +1,63 @@
-// IntegralCSV.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+See ReadMe Notes
+
+*/
 
 #include "pch.h"
 #include <iostream>
+#include <fstream>
+#include <math.h>
+#include <string>
+
+using namespace std;
+
+int x = 0;
+int y = 0; //F(x)
+int PrimeOfX = 0; //F'(X)
+int DoublePrimeOfX = 0; //F"(X)
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	int count = 0;
+	int answer = 0;
+	string fileName = "";
+
+	cout << "Do you want to input a file?\n"
+		<< "1. Yes \n2. No\n" << endl;
+	cin >> answer;
+	if (answer == 1)
+	{
+		ofstream FirstFile;
+		cout << "Enter file name with .csv" << endl;
+		cin >> fileName;
+		cout << "You entered: " << fileName << endl;
+		FirstFile.open(fileName);
+		FirstFile << "Hello I think this worked!!!";
+		FirstFile.close();
+	}
+
+	//cout << "" << endl;
+	while (count != 10) {
+		switch (count)
+		{
+		case 0:
+			cout << "Do you want to input a file?\n"
+				<< "1. Yes \n2. No\n" << endl;
+			cin >> count;
+		default:
+			if (count == 10) {
+				break;
+			}
+			cout << "Enter 10 to exit or 9 to Ask Questions" << endl;
+			cin >> count;
+		}
+	}
+	ofstream FirstFile;
+	FirstFile.open("");
+
+
+    
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
